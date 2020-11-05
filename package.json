@@ -1,0 +1,22 @@
+{
+  "name": "build-wheels",
+  "version": "1.0.0",
+  "description": "Build-Wheels\r 开启造轮子系列",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qinran0423/Build-Wheels.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qinran0423/Build-Wheels/issues"
+  },
+  "homepage": "https://github.com/qinran0423/Build-Wheels#readme",
+  "dependencies": {
+    "jest": "^26.6.3"
+  }
+}
