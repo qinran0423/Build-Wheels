@@ -24,6 +24,5 @@ describe('test helloworld index', () => {
         expect(calls[0][0]).toBe('hi');
         // 模拟函数调用的第一个参数是hi返回hi
         expect(fn.mock.results[0].value).toBe('hi');
-        //jest 测试
     });
 });
