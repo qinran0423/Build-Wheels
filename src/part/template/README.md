@@ -53,15 +53,15 @@
 5. /\{\{(.+?)\}\}/g 完整的意思就是:在全部范围内查找匹配前后有两组花括号的字符串。
 6. []”代表的是一个字符集，”^”只有在字符集中才是反向字符集的意思
 
-## 正则匹配
+## width 语法 以及 vue-template-compiler
 
-    3.js with 语法 能改变{}中自由变量中的查找方式,将{}中的变量当做 obj 的属性来查找 4.编译流程
-    complite 函数 模板编译成 render 函数 执行 render 函数返回 vnode
-    例如
-    const compiler = require('vue-template-compiler');
-    const tempalte = '<p>message</p>';
-    const res = compiler.compile(template);
-    console.log(res.render);
-    输出 with(this){return createElement('p',[createTextVNode(toString(message))])}
-    h -> vnode
-    createElement -> vnode
+js with 语法 能改变{}中自由变量中的查找方式,将{}中的变量当做 obj 的属性来查找 4.编译流程
+complite 函数 模板编译成 render 函数 执行 render 函数返回 vnode
+例如
+const compiler = require('vue-template-compiler');
+const tempalte = '<p>message</p>';
+const res = compiler.compile(template);
+console.log(res.render);
+输出 with(this){return createElement('p',[createTextVNode(toString(message))])}
+h -> vnode
+createElement -> vnode
