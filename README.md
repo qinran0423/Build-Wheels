@@ -5,4 +5,5 @@
 
 ## base 
   - 防抖、节流
+  - reactiviy(vue2,vue3数据响应式)
 
