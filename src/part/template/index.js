@@ -11,6 +11,6 @@ module.exports.compile = (template) => {
     });
     //with函数拼接
     let tail = '`}\r\n return str;';
-
+    //构造 Generate 函数
     return new Function('obj', head + template + tail);
 };
