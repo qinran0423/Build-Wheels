@@ -20,3 +20,19 @@ Function.prototype.myApply = function (context, args) {
   delete context.fn;
   return result
 }
+
+Function.prototype.myBind = function(context) {
+  const originFn = this;
+  const args = [].slice.call(arguments,1);
+
+  var Fn = function() {
+    const newArgs = [].slice.call(arguments)
+    if(this instanceof Fn) {
+      return new originFn(...args.concat(newArgs))
+    }
+    return originFn.apply(context, args.concat(newArgs))
+
+  }
+
+  return Fn;
+}
