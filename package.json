@@ -17,10 +17,6 @@
   },
   "homepage": "https://github.com/qinran0423/Build-Wheels#readme",
   "devDependencies": {
-    "@babel/core": "^7.15.0",
-    "@babel/preset-env": "^7.15.0",
-    "babel-jest": "^27.0.6",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "jest": "^27.0.6"
   }
 }
