@@ -9,7 +9,7 @@ module.exports.compile = (template) => {
     template = template.replace(/\{\%([^%]+)\%\}/g, function () {
         return '`\r\n' + arguments[1] + '\r\nstr+=`\r\n';
     });
-
+    //with函数拼接
     let tail = '`}\r\n return str;';
 
     return new Function('obj', head + template + tail);
