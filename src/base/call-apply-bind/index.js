@@ -22,6 +22,7 @@ Function.prototype.myApply = function (context, args) {
 }
 
 Function.prototype.myBind = function(context) {
+  context = context || window;
   const originFn = this;
   const args = [].slice.call(arguments,1);
 
