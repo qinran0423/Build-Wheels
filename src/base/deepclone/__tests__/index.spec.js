@@ -15,7 +15,7 @@ const obj = {
     syb: Symbol('lalala'),
     obj: {
         o: {
-            name: 'Oliver',
+            name: 'xh',
         },
     },
     cls: new Person('GH1'),
