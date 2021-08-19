@@ -1,21 +1,28 @@
-export const deepClone = (obj) => {
-    if (typeof obj !== 'object' || obj == null) {
-        // obj 是 null ，或者不是对象和数组，直接返回
-        return obj;
+export const deepClone = (origin, hasmap = new WeakMap()) => {
+    if(origin == undefined || typeof origin !== 'object') {
+      return origin
     }
-    let result;
-    if (obj instanceof Array) {
-        result = [];
-    } else {
-        result = {};
+    // date
+    if(origin.constructor === Date) {
+      return new Date(origin)
     }
-
-    for (let key in obj) {
-        // 保证 key 不是原型的属性
-        if (obj.hasOwnProperty(key)) {
-            result[key] = deepClone(obj[key]);
-        }
+    // RegExp
+    if(origin.constructor === RegExp) {
+      return new RegExp(origin)
     }
-    // 返回结果
-    return result;
-};
+  
+    const hashKey = hasmap.get(origin)
+    if(hashKey) {
+      return hashKey
+    }
+    const cloneContext = new origin.constructor()
+  
+    hasmap.set(origin, cloneContext)
+    for (const key in origin) {
+      if(origin.hasOwnProperty(key)) {
+        cloneContext[key] = deepClone(origin[key], hasmap)
+      }
+    }
+    console.log(hasmap);
+    return cloneContext
+  }
